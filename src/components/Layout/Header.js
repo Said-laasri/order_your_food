@@ -6,11 +6,12 @@ import HeaderCartButton from "./HeaderCartButton";
 import classes from "./Header.module.css"
 
 const Header = (props) => {
+  const {showCart} = props;
   return (
     <Fragment>
       <header className={classes.header}>
         <h1>Delicious Meals</h1>
-        <HeaderCartButton />
+        <HeaderCartButton showCart={showCart} />
       </header>
       <Banner />
     </Fragment>
