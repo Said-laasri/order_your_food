@@ -20,3 +20,15 @@
   color: #ad5502;
   font-size: 1.25rem;
 }
+
+.image {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.image img {
+  width: 80px;
+  height: 55px;
+}

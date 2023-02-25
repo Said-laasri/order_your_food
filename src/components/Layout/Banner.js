@@ -1,6 +1,6 @@
 import React from "react";
 
-import Image from "../../assets/takeout-mc-main1-210407.webp";
+import Image from "../../assets/vegt60.jpeg";
 
 import classes from "./Header.module.css";
 
