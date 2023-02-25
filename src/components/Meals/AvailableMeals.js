@@ -14,6 +14,7 @@ const AvailavleMeals = (props) => {
       name={meal.name}
       price={meal.price}
       description={meal.description}
+      image={meal.image}
     />
   ));
 

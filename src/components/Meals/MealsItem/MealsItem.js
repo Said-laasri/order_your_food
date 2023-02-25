@@ -6,7 +6,7 @@ import CartContext from "../../../store/cart-context";
 import classes from "./MealsItem.module.css";
 
 const MealsItem = (props) => {
-  const { id, name, price, description} = props;
+  const { id, name, price, description, image} = props;
   const cartConx = useContext(CartContext);
   const priceItem = `$${price.toFixed(2)}`;
 
@@ -26,6 +26,9 @@ const MealsItem = (props) => {
           <h3>{name}</h3>
           <div className={classes.description}>{description}</div>
           <div className={classes.price}>{priceItem}</div>
+        </div>
+        <div className={classes.image}>
+          <img  src={image} alt="salad image"  />
         </div>
         <div>
           <MealAddform onAddToCart={onAddToCartHundler} />
