@@ -13,11 +13,10 @@ const Cart = (props) => {
   const totalAmount = `$${cartConx.totalAmount.toFixed(2)}`;
   const hasItems = cartConx.items.length > 0;
 
-  const AddToCartHundler = (item) => [
-    cartConx.addItem({ ...item, amount: totalAmount }),
-  ];
+  const AddToCartHundler = (item) => [cartConx.addItem({ ...item, amount: 1 })];
 
-  const removeFromCarthundler = (id) => {;
+  const removeFromCarthundler = (id) => {
+    cartConx.removeItem(id);
   };
 
   const cartItems = (
@@ -36,7 +35,7 @@ const Cart = (props) => {
   );
 
   return (
-    <Modal hideCart={hideCart}>
+    <Modal>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
