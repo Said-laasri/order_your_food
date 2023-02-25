@@ -19,7 +19,7 @@ function App() {
   return (
     <CartProvider>
       {cartIsSohwn && <Cart hideCart={hideCarthundler} />}
-      <Header  showCart={showCarthundler} />
+      <Header showCart={showCarthundler} />
       <main>
         <Meals />
       </main>
