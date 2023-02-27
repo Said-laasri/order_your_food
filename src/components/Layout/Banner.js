@@ -1,6 +1,6 @@
 import React from "react";
 
-import Image from "../../assets/vegt60.jpeg";
+import Image from "../../assets/banner.jpeg";
 
 import classes from "./Header.module.css";
 
