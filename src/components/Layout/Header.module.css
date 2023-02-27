@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px #1B0C0D;
   z-index: 10;
 }
 
@@ -24,11 +24,17 @@
   width: 110%;
   height: 100%;
   object-fit: cover;
- 
 }
 
 h1 {
   font-family: "Pacifico", sans-serif;
   font-weight: 400;
-  color: #2D191A;
+  color: #1B0C0D;
+  text-shadow: 3px #1B0C0D;
+}
+
+@media screen and (mim-width: 760px) {
+  h1 {
+    background-color: aliceblue;
+  }
 }
