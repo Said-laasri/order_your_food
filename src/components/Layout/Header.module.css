@@ -11,6 +11,7 @@
   padding: 0 10%;
   box-shadow: 0 2px 8px #1B0C0D;
   z-index: 10;
+  background-color: rgba(42, 25, 20, 0.719);
 }
 
 .main-image {
@@ -29,12 +30,12 @@
 h1 {
   font-family: "Pacifico", sans-serif;
   font-weight: 400;
-  color: #1B0C0D;
+  color: #e4d4d5;
   text-shadow: 3px #1B0C0D;
 }
 
-@media screen and (mim-width: 760px) {
-  h1 {
-    background-color: aliceblue;
+@media screen and (max-width: 768px) {
+  h1{
+    font-size: 1.5rem;
   }
 }
