@@ -7,10 +7,11 @@ import classes from "./AvailableMeals.module.css";
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("https://order-food-1f7c5-default-rtdb.firebaseio.com/Meals.json")
+      fetch("https://order-food-1f7c5-default-rtdb.firebaseio.com/Meals.jso")
         .then((response) => response.json())
         .then((data) => {
           const loadedMeals = [];
@@ -28,6 +29,7 @@ const AvailableMeals = () => {
         })
         .catch((error) => {
           // handle errors here
+          setHttpError(error.message);
           setIsLoading(false);
         });
     }, 2000);
@@ -50,6 +52,11 @@ const AvailableMeals = () => {
         {isLoading && (
           <div className={classes.center}>
             <Spinner />
+          </div>
+        )}
+        {httpError && (
+          <div className={classes.center}>
+            <p>{httpError}</p>
           </div>
         )}
         <ul>{mealsList}</ul>

@@ -29,6 +29,7 @@
     justify-content: center;
     align-items: center;
     height: 20rem;
+    color: red;
   }
 
   @media screen and (max-width: 765px) {
