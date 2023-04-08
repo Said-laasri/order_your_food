@@ -1,6 +1,6 @@
 .meals {
-    max-width: 60rem;
-    width: 90%;
+    max-width: 70rem;
+    width: 100%;
     margin: 2rem auto;
     animation: meals-appear 1s ease-out forwards;
   }
@@ -21,4 +21,19 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .center{
+    /* center this content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+  }
+
+  @media screen and (max-width: 765px) {
+    .meals {
+      width: 100%;
+    }
+       
   }

@@ -16,3 +16,15 @@
     font-size: 2rem;
     margin-top: 0;
   }
+
+  @media screen and (min-width: 768px) {
+    .summary {
+      margin-top: -15rem;
+    }
+    
+    .summary h2 {
+      font-size: 3rem;
+    }
+  }
+    
+  
