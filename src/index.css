@@ -12,8 +12,17 @@ html {
 
 body {
   margin: 0;
-  background-image: url('./assets/field.jpeg');
+  /* background-image: url('./assets/field.jpeg'); */
+  background-color: rgb(144, 148, 137);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* center spinner */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
