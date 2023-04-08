@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10%;
-  box-shadow: 0 2px 8px #1B0C0D;
+  box-shadow: 0 2px 8px #1b0c0d;
   z-index: 10;
   background-color: rgba(42, 25, 20, 0.719);
 }
@@ -31,11 +31,15 @@ h1 {
   font-family: "Pacifico", sans-serif;
   font-weight: 400;
   color: #e4d4d5;
-  text-shadow: 3px #1B0C0D;
+  text-shadow: 3px #1b0c0d;
 }
 
 @media screen and (max-width: 768px) {
-  h1{
-    font-size: 1.5rem;
+  .header {
+    height: 4rem;
+  }
+
+  h1 {
+    font-size: 1rem;
   }
 }

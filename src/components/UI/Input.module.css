@@ -6,7 +6,7 @@
   
   .input label {
     font-weight: bold;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
   
   .input input {
@@ -16,3 +16,19 @@
     font: inherit;
     padding-left: 0.5rem;
   }
+
+  @media screen and (min-width: 768px) {
+    .input {
+      margin-bottom: 1rem;
+    }
+    
+    .input label {
+      font-size: 1.2rem;
+    }
+    
+    .input input {
+      width: 5rem;
+      font-size: 1.2rem;
+    }
+  }
+    
