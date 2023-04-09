@@ -45,3 +45,10 @@
     background-color: #118a06;
     color: white;
   }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+  }

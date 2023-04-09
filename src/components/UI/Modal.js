@@ -13,8 +13,9 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
+  const { hideCart } = props;
   return (
-    <div className={classes.modal}>
+    <div onClick={hideCart} className={classes.modal}>
       <div className={classes.content}>{props.children}</div>
     </div>
   );
@@ -28,7 +29,7 @@ const Modal = (props) => {
     <React.Fragment>
       {ReactDOM.createPortal(
         <Backdrop hideCart={hideCart}>
-          <ModalOverlay>{props.children}</ModalOverlay>
+          <ModalOverlay hideCart={hideCart}>{props.children}</ModalOverlay>
         </Backdrop>,
         portalElement
       )}

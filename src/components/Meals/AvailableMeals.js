@@ -11,7 +11,7 @@ const AvailableMeals = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("https://order-food-1f7c5-default-rtdb.firebaseio.com/Meals.jso")
+      fetch("https://order-food-1f7c5-default-rtdb.firebaseio.com/Meals.json")
         .then((response) => response.json())
         .then((data) => {
           const loadedMeals = [];
