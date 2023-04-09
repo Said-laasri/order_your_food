@@ -40,7 +40,7 @@ Delicious Meals is a website that allows you to search for recipes and get the i
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://delicious-ten.vercel.app/)
+- [Live Demo Link](https://delicious-g426tn1zy-said-laasri.vercel.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
