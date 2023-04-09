@@ -40,6 +40,7 @@ const Cart = (props) => {
       setIsSubmitting(false);
     }, 3000);
     setDidSubmit(true);
+    cartConx.clearItems();
   };
 
   const cartItems = (
