@@ -1,12 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
+import Spinner from "../../components/UI/Spinner";
+import Checkout from "./Checkout";
 import classes from "./Cart.module.css";
 
 const Cart = (props) => {
+  const [isCheckout, setIsCheckout] = useState(false);
   const cartConx = useContext(CartContext);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [didSubmit, setDidSubmit] = useState(false);
 
   const { hideCart } = props;
 
@@ -17,6 +22,25 @@ const Cart = (props) => {
 
   const removeFromCarthundler = (id) => {
     cartConx.removeItem(id);
+  };
+
+  const submitOrderHandler = (userData) => {
+    setIsSubmitting(true);
+    setTimeout(async () => {
+      await fetch(
+        "https://orders-6d758-default-rtdb.firebaseio.com/orders.json",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            user: userData,
+            orderedItems: cartConx.items,
+          }),
+        }
+      );
+      setIsSubmitting(false);
+    }, 3000);
+    setDidSubmit(true);
+    cartConx.clearItems();
   };
 
   const cartItems = (
@@ -34,19 +58,56 @@ const Cart = (props) => {
     </ul>
   );
 
-  return (
-    <Modal>
+  const orderHandler = () => {
+    setIsCheckout(true);
+  };
+
+  const modalCheckout = (
+    <div className={classes.actions}>
+      <button onClick={hideCart} className={classes["button--alt"]}>
+        Close
+      </button>
+      {hasItems && (
+        <button className={classes.button} onClick={orderHandler}>
+          Order
+        </button>
+      )}
+    </div>
+  );
+
+  const cardModalContent = (
+    <>
       {cartItems}
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
+      {isCheckout && (
+        <Checkout onConfirm={submitOrderHandler} onCancel={hideCart} />
+      )}
+      {!isCheckout && modalCheckout}
+    </>
+  );
+  const isSubmittingModalContent = (
+    <div className={classes.center}>
+      <Spinner />
+    </div>
+  );
+  const didSubmitModalContent = (
+    <div>
+      <p>Successfully sent the order!</p>
       <div className={classes.actions}>
-        <button onClick={hideCart} className={classes["button--alt"]}>
+        <button onClick={hideCart} className={classes.button}>
           Close
         </button>
-        {hasItems && <button className={classes.button}>Order</button>}
       </div>
+    </div>
+  );
+  return (
+    <Modal>
+      {!isSubmitting && !didSubmit && cardModalContent}
+      {isSubmitting && isSubmittingModalContent}
+      {!isSubmitting && didSubmit && didSubmitModalContent}
     </Modal>
   );
 };
